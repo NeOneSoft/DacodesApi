@@ -4,15 +4,21 @@ from rest_framework import serializers
 # Models
 from .models import Lesson
 
+# Serializers
+from courses.serializers import CourseSerializer
+from questions.serializers import QuestionSerializer
+
 
 class LessonSerializer(serializers.ModelSerializer):
     """
     Lesson general purpose serializer
     """
+    # Using serializers from Courses and Questions
+    course = CourseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Lesson
-        fields = ('lesson', 'course_lesson', 'target_score')
+        fields = ('lesson', 'target_score', 'course')
 
 
 class CreateLessonSerializer(serializers.ModelSerializer):
@@ -22,4 +28,4 @@ class CreateLessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('lesson', 'course_lesson', 'target_score')
+        fields = ('lesson', 'target_score', 'course')
