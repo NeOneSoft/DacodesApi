@@ -6,7 +6,7 @@ from .models import Lesson
 
 # Serializers
 from courses.serializers import CourseSerializer
-from questions.serializers import QuestionSerializer
+
 
 
 class LessonSerializer(serializers.ModelSerializer):

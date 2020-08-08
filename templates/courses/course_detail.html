@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="col-md-6 col-auto">
+  <div class="card">
+    <div class="card-header">
+      Course detail
+    </div>
+     <ul class="list-group list-group-flush">
+     {% for lesson in lessons %}
+      <li class="list-group-item">
+          Lesson: <a href="{% url 'lessons-detail' lesson.id %}"> {{ lesson.lesson }} </a>
+      </li>
+     {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

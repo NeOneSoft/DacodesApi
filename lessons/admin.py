@@ -1,3 +1,10 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Models
+from .models import Lesson
+
+
+@admin.register(Lesson)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('lesson', 'target_score')

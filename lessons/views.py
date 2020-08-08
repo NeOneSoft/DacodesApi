@@ -1,3 +1,7 @@
+# Django
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+
 # Djangorestframework
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
@@ -12,6 +16,20 @@ from .serializers import LessonSerializer, CreateLessonSerializer
 from questions.serializers import QuestionSerializer
 
 
+# Frontend Logic
+
+
+# Lesson detail view
+class LessonDetailView(DetailView):
+    model = Lesson
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # Call the base implementation first to get a context
+        context['questions'] = Question.objects.filter(lesson=self.object)  # Add in a QuerySet of all the commits
+        return context
+
+
+# API lessons endpoint logic
 class LessonViewSet(viewsets.ModelViewSet):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer

@@ -13,3 +13,6 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.lesson
+
+    class Meta:
+        ordering = ['id']

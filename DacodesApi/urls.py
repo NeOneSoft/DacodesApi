@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # Include Frontend urls
+    path('', include('courses.urls')),
     # API v1 urls
     path('api/v1/', include('core.urls.v1')),
     # Admin module url

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block content %}
+ <div class="col-md-6 col-auto">
+  <div class="card">
+    <div class="card-header">
+      Courses
+    </div>
+    <ul class="list-group list-group-flush">
+      {% for course in courses %}
+      <li class="list-group-item">
+          <a href="{% url 'courses-detail' course.id %}">{{ course.course }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

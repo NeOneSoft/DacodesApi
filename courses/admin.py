@@ -1,3 +1,10 @@
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Models
+from .models import Course
+
+
+@admin.register(Course)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ['course']
