@@ -1,6 +1,7 @@
 # Django
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Djangorestframework
 from rest_framework import viewsets, status
@@ -27,7 +28,7 @@ def courses(request):
 
 
 # Course list view
-class CourseListView(ListView):
+class CourseListView(LoginRequiredMixin, ListView):
     model = Course
     template_name = 'courses/courses.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'courses'
@@ -36,7 +37,7 @@ class CourseListView(ListView):
 
 
 # Course detail view
-class CourseDetailView(DetailView):
+class CourseDetailView(LoginRequiredMixin, DetailView):
     model = Course
 
     def get_context_data(self, **kwargs):
@@ -46,7 +47,7 @@ class CourseDetailView(DetailView):
 
 
 # Lesson detail view
-class LessonDetailView(DetailView):
+class LessonDetailView(LoginRequiredMixin, DetailView):
     model = Lesson
 
     def get_context_data(self, **kwargs):

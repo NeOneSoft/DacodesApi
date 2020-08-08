@@ -8,7 +8,7 @@
      <ul class="list-group list-group-flush">
      {% for lesson in lessons %}
       <li class="list-group-item">
-          Lesson: <a href="{% url 'lessons-detail' lesson.id %}"> {{ lesson.lesson }} </a>
+          Lesson: <a href="{% url 'courses:lessons-detail' lesson.id %}"> {{ lesson.lesson }} </a>
       </li>
      {% endfor %}
     </ul>
