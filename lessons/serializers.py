@@ -18,7 +18,7 @@ class LessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('lesson', 'target_score', 'course')
+        fields = ('lesson', 'target_score', 'course', 'students')
 
 
 class CreateLessonSerializer(serializers.ModelSerializer):
@@ -28,4 +28,4 @@ class CreateLessonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lesson
-        fields = ('lesson', 'target_score', 'course')
+        fields = ('lesson', 'target_score', 'course', 'students')

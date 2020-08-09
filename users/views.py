@@ -25,7 +25,9 @@ class SignupView(FormView):
     success_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
-        """Save form data."""
+        """
+        Save form data.
+        """
         form.save()
         return super().form_valid(form)
 

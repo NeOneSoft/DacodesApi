@@ -1,6 +1,6 @@
 # Django
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 
 # Djangorestframework
 from rest_framework import viewsets, status
@@ -14,7 +14,7 @@ from questions.models import Question
 # Serializers
 from .serializers import LessonSerializer, CreateLessonSerializer
 from questions.serializers import QuestionSerializer
-
+from users.serializers import UserSerializer
 
 # Frontend Logic
 
@@ -41,6 +41,7 @@ class LessonViewSet(viewsets.ModelViewSet):
         return LessonSerializer
 
     # Additional Courses API service
+    # GET lessons questions
     @action(detail=True, methods=['GET'])
     def questions(self, request, pk=None):
         lesson = self.get_object()
@@ -48,4 +49,14 @@ class LessonViewSet(viewsets.ModelViewSet):
         serialized = QuestionSerializer(questions, many=True)
         if not questions:
             return Response(status=status.HTTP_404_NOT_FOUND, data={'message': 'This lesson has not questions'})
+        return Response(status=status.HTTP_200_OK, data=serialized.data)
+
+    # GET lessons students
+    @action(detail=True, methods=['GET'])
+    def students(self, request, pk=None):
+        course = self.get_object()
+        students = User.objects.filter(course=course.id)
+        serialized = UserSerializer(students, many=True)
+        if not students:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={'message': 'This lesson has not students'})
         return Response(status=status.HTTP_200_OK, data=serialized.data)

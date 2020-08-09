@@ -12,7 +12,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ['course']
+        fields = ['course', 'students']
 
 
 class CreateCourseSerializer(serializers.ModelSerializer):
@@ -22,4 +22,4 @@ class CreateCourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ['course']
+        fields = ['course', 'students']
