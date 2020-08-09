@@ -44,7 +44,7 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)  # Call the base implementation first to get a context
-        context['lessons'] = Lesson.objects.filter(course=self.object)  # Add in a QuerySet of all the commits
+        context['lessons'] = Lesson.objects.filter(course=self.object)  # Add in a QuerySet of all the lessons
         return context
 
 
@@ -53,8 +53,8 @@ class LessonDetailView(LoginRequiredMixin, DetailView):
     model = Lesson
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)  # Call the base implementation first to get a context
-        context['questions'] = Question.objects.filter(lesson=self.object)  # Add in a QuerySet of all the commits
+        context = super().get_context_data(**kwargs)
+        context['questions'] = Question.objects.filter(lesson=self.object)
         return context
 
 
