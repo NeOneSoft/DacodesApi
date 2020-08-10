@@ -13,12 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#Django
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+#Djangorestframework
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
+from rest_framework.documentation import include_docs_urls
 urlpatterns = [
     # JWT urls
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -26,9 +28,11 @@ urlpatterns = [
     # Include Frontend urls
     path('', include(('courses.urls', 'courses'), namespace='courses')),
     path('users/', include(('users.urls', 'users'), namespace='users')),
-    # API v1 urls
+    # API v1 url
     path('api/v1/', include('core.urls.v1')),
     # Admin module url
     path('admin/', admin.site.urls),
+    # API documentation for Frontend team
+    path('documentation/', include_docs_urls(title='Dacodes API', public=True))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
