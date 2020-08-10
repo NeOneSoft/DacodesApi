@@ -26,7 +26,7 @@ as students we can use the UI to get an account, login to the system and access 
 - Users
 - Admin
 
-#Install instructions:
+# Install instructions:
 
 Before running please follow this steps:
 
