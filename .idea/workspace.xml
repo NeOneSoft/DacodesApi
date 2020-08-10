@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a44924af-0d48-4ad7-954f-07c3228fc937" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DacodesApi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DacodesApi/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,10 +86,10 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="192" y="76" key="SettingsEditor/0.23.1440.821@0.23.1440.821" timestamp="1596808701285" />
-    <state x="376" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1597004145089">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="376" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1597069768850">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="376" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1596981292020" />
+    <state x="376" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1597069768850" />
     <state x="376" y="269" key="com.intellij.ide.util.TipDialog/0.23.1440.821@0.23.1440.821" timestamp="1597004145089" />
     <state x="327" y="161" width="670" height="676" key="search.everywhere.popup" timestamp="1596944147181">
       <screen x="0" y="23" width="1440" height="814" />
